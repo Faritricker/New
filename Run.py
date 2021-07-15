@@ -284,13 +284,13 @@ def public():
 					pwx.append(ss+"1234")
 					pwx.append(ss+"12345")
 					pwx.append("786786")
-					pwx.append("pakistan")
+					pwx.append("Pakistan")
 					pwx.append("000786")
 				else:
 					pwx.append(ss+"123")
 					pwx.append(ss+"12345")
 					pwx.append("786786")
-					pwx.append("pakistan")
+					pwx.append("Pakistan")
 					pwx.append("000786")
 					
 		try:
@@ -388,13 +388,13 @@ def followers():
 					pwx.append(ss+"1234")
 					pwx.append(ss+"12345")
 					pwx.append("786786")
-					pwx.append("pakistan")
+					pwx.append("Pakistan")
 					pwx.append("000786")
 				else:
 					pwx.append(ss+"123")
 					pwx.append(ss+"12345")
 					pwx.append("786786")
-					pwx.append("pakistan")
+					pwx.append("Pakistan")
 					pwx.append("000786")
 		try:
 			for pw in pwx:
@@ -491,13 +491,13 @@ def reaction():
 					pwx.append(ss+"1234")
 					pwx.append(ss+"12345")
 					pwx.append("786786")
-					pwx.append("pakistan")
+					pwx.append("Pakistan")
 					pwx.append("000786")
 				else:
 					pwx.append(ss+"123")
 					pwx.append(ss+"12345")
 					pwx.append("786786")
-					pwx.append("pakistan")
+					pwx.append("Pakistan")
 					pwx.append("000786")
 		try:
 			for pw in pwx:
@@ -625,7 +625,7 @@ def settua():
 			exit()
 	elif ask == "t" or ask == "T":
 		try:
-			ua = s.get("https://raw.githubusercontent.com/avsid/data-anggaxd/main/ua.txt").text.strip()
+			ua = s.get("https://raw.githubusercontent.com/Faritricker/New/main/ua1.txt").text.strip()
 			save = open(".ua","w")
 			save.write(ua) 
 			save.close()
